@@ -41,7 +41,6 @@ Die Offsetspannung beträgt bei jedem Messwert
 \begin{equation}
   U_\text{offset} = \SI{96.9}{\V}.
 \end{equation}
-
 In Abbildung \ref{fig:Schwingfall} ist unter anderem der Graph der Messwerte
 mit einberechnetem Offset abgebildet.
 
@@ -51,32 +50,111 @@ Zunächst werden mit der Funktion $curvefit$ aus $scipy.optimize$ zwei
 Ausgleichsfunktionen bestimmt, die durch die Maxima und Minima
 verlaufen. Diese haben wie schon in der Theorie erwähnt jeweils die Form einer
 Exponentialfunktion.
-Die obere Einhüllende $I_1(t)$, die durch die Maxima verläuft, entspricht mit
+Die obere Einhüllende, die durch die Maxima verläuft, entspricht mit
 
 \begin{equation}
-  I_1(t) = A \symup{e}^{zt}
+  U_1(t) = \SI{109.33}{\V} \symup{e}^{-2\symup{\pi} \cdot 568.79\cdot t}
 \end{equation}
 etwa dem Betrag der unteren Einhüllenden
 
 \begin{equation}
-  I_2(t) = - B \symup{e}^{rt}.
+  U_2(t) = \SI{-96.52}{\V} \symup{e}^{-2\symup{\pi} \cdot 677.96\cdot t}.
 \end{equation}
-
+Dies ist ebenfalls in Abbildung \ref{fig:Schwingfall} erkennbar.
 
 \begin{figure}[h]
   \centering
-  \includegraphics{plota1.pdf}
-  \caption{Messwerte des Schwingfalles und Einhüllende $I_1$ und $I_2$.}
+  \includegraphics{plota.pdf}
+  \caption{Messwerte des Schwingfalles und Einhüllende $U_1$ und $U_2$.}
   \label{fig:Schwingfall}
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics{plotc.pdf}
-  \caption{Plotc.}
-  \label{fig:plotc}
-\end{figure}
+Aus den Exponenten der Exponentialfunktionen wird das arithmetische Mittel
+gebildet. Es folgt
+
+\begin{equation}
+  \mu = 623.375
+\end{equation}
+und daraus über die Formel
+
+\begin{equation}
+  T_\text{ex} = \frac{2L}{R} = \frac{1}{2\symup{\pi}\mu}
+\end{equation}
+der effektive Dämpfungswiderstand
+
+\begin{equation}
+  R_\text{eff} = \SI{131.447}{\ohm}
+\end{equation}
+und die Abklingdauer
+
+\begin{equation}
+  T_\text{ex} = \SI{0.0002553}{\second}.
+\end{equation}
+Der benutzte Dämpfungswiderstand beträgt wie schon in der Durchführung erwähnt
+
+\begin{equation}
+  R =  .
+\end{equation}
+
 
 \subsection{Aperiodischer Grenzfall eines RCL-Schwingkreises}
 
-\subsubsection{Messwerte}
+In der zweiten Messung wird ein variabler Widerstand so verändert, dass
+sich an dem RCL-Schwingkreis der aperiodische Grenzfall einstellt.
+Für den effektiven variablen Widerstand wird dafür der Wert
+
+\begin{equation}
+  R_\text{eff} = \SI{1.9}{\kilo\ohm}
+\end{equation}
+gemessen.
+Der Theoriewert für den Dämpfungswiderstand bei gegebener Kapazität $C$ und
+Induktivität $L$ ist
+
+\begin{equation}
+  R = \sqrt{\frac{4L}{C}}.
+\end{equation}
+
+
+\subsection{Kondensatorspannung und Phasenverschiebung
+einer erzwungenen Schwingung}
+
+In der dritten Messreihe wird sowohl die Kondensatorspannung als auch die
+Phasenverschiebung der erzwungenen Schwingung im RCL-Schwingkreis in
+Abhängigkeit von der Frequenz gemessen. In Abbildung \ref{fig:plotc1} sind
+die Messwerte der Spannung aufgetragen. Aus den Werten für die
+Resonanzfrequenz
+
+\begin{equation}
+  \nu_\text{res} = \SI{26000}{\hertz}
+\end{equation}
+und den Grenzen des Resonanz-Peaks
+
+\begin{align}
+  \nu_- = & \SI{25600}{\V} & \nu_+ = & \SI{27000}{\V}, \\
+\end{align}
+die jeweils an der Kondensatorspannung
+
+\begin{equation}
+  U_\text{+-} = \frac{SI{186}{\V}}{\sqrt{2}} = SI{131.5}{\V}
+\end{equation}
+liegen, kann nun die Güte $q$ des Schwingkreises bestimmt werden.
+Aus der Formel
+
+\begin{equation}
+  q = \frac{\nu_\text{res}}{\nu_+ - \nu_-}
+\end{equation}
+folgt für die Güte
+
+\begin{equation}
+  q = 1.857 .
+\end{equation}
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plotc1.pdf}
+  \caption{Plotc.}
+  \label{fig:plotc1}
+\end{figure}
