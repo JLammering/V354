@@ -1,9 +1,82 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Schwingfall eines RCL-Schwingkreises}
+
+
+\subsubsection{Messwerte}
+
+In der ersten Messung wird mit Hilfe des Oszilloskops der Schwingfall eines
+RCL-Schwingkreises aufgezeichnet. Die Minima und Maxima der Messwerte der
+gedämpften Schwingung sind in Tabelle \ref{tab:Schwingfall} dargestellt.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c c}
+    \toprule
+    \multicolumn{2}{c}{Minima} & \multicolumn{2}{c}{Maxima} \\
+    $t/\si{\micro\second}$ & $U/\si{\V}$
+    & $t/\si{\micro\second}$ & $U/\si{\V}$  \\
+    \midrule
+    36.6 & 14 & 18.4 & 200 \\
+    74.6 & 26 & 56.2 & 186 \\
+    111.8 & 38 & 92.8 & 176 \\
+    149.8 & 46 & 130.8 & 164 \\
+    188.6 & 54 & 169.0 & 156 \\
+    225.6 & 60 & 206.8 & 150 \\
+    263.8 & 66 & 245.6 & 142 \\
+    302.2 & 70 & 283.8 & 136 \\
+    339.8 & 74 & 321.6 & 132 \\
+    377.6 & 78 & 357.0 & 126 \\
+    416.6 & 80 & 396.6 & 124 \\
+    453.6 & 82 & 434.4 & 122 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Maxima und Minima des Schwingfalls}
+  \label{tab:Schwingfall}
+\end{table}
+
+Die Offsetspannung beträgt bei jedem Messwert
+
+\begin{equation}
+  U_\text{offset} = \SI{96.9}{\V}.
+\end{equation}
+
+In Abbildung \ref{fig:Schwingfall} ist unter anderem der Graph der Messwerte
+mit einberechnetem Offset abgebildet.
+
+\subsubsection{Rechnung}
+
+Zunächst werden mit der Funktion $curvefit$ aus $scipy.optimize$ zwei
+Ausgleichsfunktionen bestimmt, die durch die Maxima und Minima
+verlaufen. Diese haben wie schon in der Theorie erwähnt jeweils die Form einer
+Exponentialfunktion.
+Die obere Einhüllende $I_1(t)$, die durch die Maxima verläuft, entspricht mit
+
+\begin{equation}
+  I_1(t) = A \symup{e}^{zt}
+\end{equation}
+etwa dem Betrag der unteren Einhüllenden
+
+\begin{equation}
+  I_2(t) = - B \symup{e}^{rt}.
+\end{equation}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plota1.pdf}
+  \caption{Messwerte des Schwingfalles und Einhüllende $I_1$ und $I_2$.}
+  \label{fig:Schwingfall}
+\end{figure}
+
+\begin{figure}[h]
   \centering
   \includegraphics{plotc.pdf}
   \caption{Plotc.}
   \label{fig:plotc}
 \end{figure}
+
+\subsection{Aperiodischer Grenzfall eines RCL-Schwingkreises}
+
+\subsubsection{Messwerte}
