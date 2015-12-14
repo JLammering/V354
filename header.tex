@@ -132,3 +132,12 @@
   }{}%
 }
 \publishers{TU Dortmund – Fakultät Physik}
+
+\ExplSyntaxOn
+ \NewDocumentCommand \g {m}
+ {
+  \ensuremath{
+    \symup{#1}
+  }
+ }
+ \ExplSyntaxOff
