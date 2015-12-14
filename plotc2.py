@@ -32,6 +32,20 @@ plt.plot((l, l), (1, 1000), 'r')
 
 print(l)
 
+#Theorie Peak-Grenzen
+
+h = 10/(np.sqrt(((1-L*C*(l*2*np.pi)**2)**2) + ((l*2*np.pi)**2 * R**2 * C**2)))
+
+k = h/np.sqrt(2)
+
+i = 1/(2*np.pi)*np.sqrt((2*L*C-R**2*C**2)/(2*L**2*C**2)  +  np.sqrt( ((-2*L*C+R**2*C**2)/(2*L**2*C**2))**2 +
+400 * (np.pi)**2/(k**2*L**2*C**2) - 1/(L**2*C**2) ))
+
+j = 1/(2*np.pi)*np.sqrt((2*L*C-R**2*C**2)/(2*L**2*C**2)  -  np.sqrt( ((-2*L*C+R**2*C**2)/(2*L**2*C**2))**2 +
+400 * (np.pi)**2/(k**2*L**2*C**2) - 1/(L**2*C**2) ) )
+
+print(h, i, j)
+
 #Rest:
 
 plt.xlim(0,45100)

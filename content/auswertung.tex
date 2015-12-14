@@ -1,8 +1,11 @@
+\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
 
 \subsection{Schwingfall eines RCL-Schwingkreises}
 
+Für die Fehlerfortpflanzung bei mehreren fehlerbehafteten Größen wurde jeweils
+die Funktion $ufloat$ von $uncertainties$ benutzt.
 
 \subsubsection{Messwerte}
 
@@ -32,7 +35,7 @@ gedämpften Schwingung sind in Tabelle \ref{tab:Schwingfall} dargestellt.
     453.6 & 82 & 434.4 & 122 \\
     \bottomrule
   \end{tabular}
-  \caption{Maxima und Minima des Schwingfalls}
+  \caption{Maxima und Minima des Schwingfalls.}
   \label{tab:Schwingfall}
 \end{table}
 
@@ -53,12 +56,14 @@ Exponentialfunktion.
 Die obere Einhüllende, die durch die Maxima verläuft, entspricht mit
 
 \begin{equation}
-  U_1(t) = \SI{109.33}{\V} \symup{e}^{-2\symup{\pi} \cdot 568.79\cdot t}
+  U_1(t) = \SI{109.33}{\V} \symup{e}^{-2\symup{\pi} \cdot
+  \SI{568.79}{\per\second} \cdot t}
 \end{equation}
 etwa dem Betrag der unteren Einhüllenden
 
 \begin{equation}
-  U_2(t) = \SI{-96.52}{\V} \symup{e}^{-2\symup{\pi} \cdot 677.96\cdot t}.
+  U_2(t) = \SI{-96.52}{\V} \symup{e}^{-2\symup{\pi} \cdot
+  \SI{677.96}{\per\second} \cdot t}.
 \end{equation}
 Dies ist ebenfalls in Abbildung \ref{fig:Schwingfall} erkennbar.
 
@@ -73,7 +78,7 @@ Aus den Exponenten der Exponentialfunktionen wird das arithmetische Mittel
 gebildet. Es folgt
 
 \begin{equation}
-  \mu = 623.375
+  \mu = \SI{623.375}{\per\second}
 \end{equation}
 und daraus über die Formel
 
@@ -83,17 +88,17 @@ und daraus über die Formel
 der effektive Dämpfungswiderstand
 
 \begin{equation}
-  R_\text{eff} = \SI{131.447}{\ohm}
+  R_\text{eff} = \SI{131.4(7)}{\ohm}
 \end{equation}
 und die Abklingdauer
 
 \begin{equation}
-  T_\text{ex} = \SI{0.0002553}{\second}.
+  T_\text{ex} = \SI{0.0002553}{\second} = \SI{0.2553}{\micro\second} .
 \end{equation}
 Der benutzte Dämpfungswiderstand beträgt wie schon in der Durchführung erwähnt
 
 \begin{equation}
-  R =  .
+  R = \SI{682(1)}{\ohm} .
 \end{equation}
 
 
@@ -111,18 +116,104 @@ Der Theoriewert für den Dämpfungswiderstand bei gegebener Kapazität $C$ und
 Induktivität $L$ ist
 
 \begin{equation}
-  R = \sqrt{\frac{4L}{C}}.
+  R = \sqrt{\frac{4L}{C}} = \SI{5.7(2)}{\kilo\ohm}.
 \end{equation}
 
 
-\subsection{Kondensatorspannung und Phasenverschiebung
+\subsection{Spannung und Phasenverschiebung
 einer erzwungenen Schwingung}
 
-In der dritten Messreihe wird sowohl die Kondensatorspannung als auch die
-Phasenverschiebung der erzwungenen Schwingung im RCL-Schwingkreis in
-Abhängigkeit von der Frequenz gemessen. In Abbildung \ref{fig:plotc1} sind
-die Messwerte der Spannung aufgetragen. Aus den Werten für die
-Resonanzfrequenz
+\subsubsection{Messwerte}
+
+In der dritten Messreihe wird sowohl die Kondensatorspannung $U_C$ als auch die
+Phasenverschiebung $\theta$ der erzwungenen Schwingung im RCL-Schwingkreis in
+Abhängigkeit von der Frequenz $\nu$ gemessen.
+In den Tabellen \ref{tab:Messung3a} und \ref{tab:Messung3b}
+sind die aufgenommenen Messwerte abgebildet.
+Die Phasenverschiebung ist nicht als Winkel, sondern als Zeitdifferenz $t_D$
+dargestellt.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c}
+    \toprule
+    $\nu/\si{\hertz}$ & $t_D/\si{\micro\second}$ & $U_C/\si{\volt}$ \\
+    \midrule
+    4.26 & 0 & 5.2 \\
+    100 & 0 & 10 \\
+    200 & 0 & 10.1 \\
+    500 & 0 & 10 \\
+    1000 & 0 & 10 \\
+    2000 & 0 & 10 \\
+    4000 & 0 & 10.1 \\
+    6000 & 0 & 10.5 \\
+    8000 & 0 & 10.8 \\
+    10000 & 0 & 11 \\
+    12000 & 0 & 12 \\
+    14000 & 0 & 12.6 \\
+    16000 & 0 & 14.8 \\
+    18000 & 0 & 17.6 \\
+    20000 & 0 & 22.4 \\
+    21000 & 0 & 26 \\
+    22000 & 0 & 31.2 \\
+    23000 & 0 & 40 \\
+    23500 & 0 & 45.6 \\
+    24000 & 0 & 54.4 \\
+    24500 & 0 & 66.4 \\
+    25000 & 2 & 89 \\
+    25200 & 2 & 100 \\
+    25400 & 2.5 & 115 \\
+    25600 & 3 & 132 \\
+    25800 & 4 & 153 \\
+    26000 & 5 & 173 \\
+    26100 & 6 & 181 \\
+    26200 & 8 & 186 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der erzwungenen Schwingung.}
+  \label{tab:Messung3a}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c}
+    \toprule
+    $\nu/\si{\hertz}$ & $t_D/\si{\micro\second}$ & $U_C/\si{\volt}$ \\
+    \midrule
+    26300 & 10 & 186 \\
+    26400 & 11 & 184 \\
+    26500 & 12 & 177 \\
+    26600 & 13 & 169 \\
+    26700 & 14 & 160 \\
+    26800 & 15 & 149 \\
+    26900 & 15 & 139 \\
+    27000 & 15 & 130 \\
+    27100 & 16 & 120 \\
+    27200 & 16 & 112 \\
+    27300 & 16 & 105 \\
+    27500 & 17 & 92 \\
+    27700 & 17 & 82 \\
+    28000 & 17.5 & 70 \\
+    28500 & 17.5 & 56 \\
+    29000 & 17.5 & 46 \\
+    30000 & 17 & 34 \\
+    31000 & 17 & 28 \\
+    33000 & 16.5 & 20 \\
+    35000 & 15 & 16 \\
+    40000 & 13 & 8.8 \\
+    45000 & 11 & 6.4 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Messwerte der erzwungenen Schwingung.}
+  \label{tab:Messung3b}
+\end{table}
+
+
+\subsubsection{Berechnung der Güte}
+
+In Abbildung \ref{fig:plotc1} sind
+die Messwerte der Kondensatorspannung logarithmisch als Graph aufgetragen.
+Aus den Werten für die Resonanzfrequenz
 
 \begin{equation}
   \nu_\text{res} = \SI{26000}{\hertz}
@@ -135,9 +226,19 @@ und den Grenzen des Resonanz-Peaks
 die jeweils an der Kondensatorspannung
 
 \begin{equation}
-  U_\text{+-} = \frac{\SI{186}{\V}}{\sqrt{2}} = \SI{131.5}{\V}
+  U_{+-} = \frac{\SI{186}{\V}}{\sqrt{2}} = \SI{131.5}{\V}
 \end{equation}
 liegen, kann nun die Güte $q$ des Schwingkreises bestimmt werden.
+
+\newpage
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plotc1.pdf}
+  \caption{Resonanzkurve der Spannung.}
+  \label{fig:plotc1}
+\end{figure}
+
 Aus der Formel
 
 \begin{equation}
@@ -148,13 +249,68 @@ folgt für die Güte
 \begin{equation}
   q = 1.857 .
 \end{equation}
+Der Theoriewert der Güte hat mit der Grenzfrequenz
 
+\begin{equation}
+  \nu_\text{res} = \SI{27027}{\hertz}
+\end{equation}
+und den Grenzen des Resonanz-Peaks
 
+\begin{align}
+  \nu_- = & \SI{24049}{\V} & \nu_+ = & \SI{29798}{\V} \\
+\end{align}
+den Wert
 
+\begin{equation}
+  q = 4.776 .
+\end{equation}
 
-\begin{figure}[h]
+\subsubsection{Berechnung der Phasenverschiebung}
+
+Mit Hilfe der Formel
+
+\begin{equation}
+  \varphi = t_D \cdot 2\symup{\pi}f
+\end{equation}
+wird für jeden Differenzwert $t_D$ die Phasenverschiebung $\varphi$ bestimmt.
+Die Werte sind in einem Polarplot in Abbildung \ref{fig:Polar} abgebildet.
+
+\begin{figure}
   \centering
-  \includegraphics{plotc1.pdf}
-  \caption{Plotc.}
-  \label{fig:plotc1}
+  \includegraphics{plotd1.pdf}
+  \caption{Messwerte der Phasenverschiebung, Frequenz in $\si{\kilo\hertz}$.}
+  \label{fig:Polar}
 \end{figure}
+
+Der Bereich um $\varphi = \symup{\pi}$ ist zusätzlich in einem karthesischen
+Koordinatensystem in Abbildung \ref{fig:Karth} dargestellt.
+
+\newpage
+
+\begin{figure}
+  \centering
+  \includegraphics{plotd2.pdf}
+  \caption{Phasenverschiebung zwischen $0$ und $\symup{\pi}$.}
+  \label{fig:Karth}
+\end{figure}
+
+Aus diesem Graphen erhält man die Werte
+
+\begin{align}
+  \nu_1 = & \SI{26000}{\hertz} & \nu_2 = & \SI{26600}{\hertz} \\
+\end{align}
+an den Stellen
+
+\begin{align}
+  \varphi_1 = & \frac{\symup{\pi}}{2} & \varphi_2 = & \frac{\symup{3\pi}}{4}. \\
+\end{align}
+Für die Differenz folgt
+
+\begin{equation}
+  \nu_2 - \nu_1 = \SI{600}{\hertz}.
+\end{equation}
+Der Theoriewert beträgt
+
+\begin{equation}
+  \frac{R}{2\symup{\pi}L} = \SI{637(4)}{\hertz}.
+\end{equation}

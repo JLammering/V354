@@ -1,2 +1,100 @@
+\newpage
+
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Eine kleine Abweichung ist bei allen Mess- und Theoriewerten zu erwarten,
+da die benutzten Spulen und Kondensatoren als ideal angenommen wurden, was
+aber nicht vollständig zutrifft.
+
+
+\subsection{Schwingfall eines RCL-Schwingkreises}
+
+Aus den Messergebnissen wird ein effektiver Widerstand
+$R_\text{eff} = \SI{131.4(7)}{\ohm}$ berechnet. Das entspricht einer
+prozentualen Abweichung von
+
+\begin{equation}
+  \SI{100}{\percent} (1 - \frac{R_\text{eff}}{R}) = \SI{80.7}{\percent}
+\end{equation}
+von dem Widerstand $R$, der in den Schaltkreis eingebaut wird.
+Diese große Abweichung lässt sich unter anderem dadurch erklären, dass
+der Exponent der Ausgleichsexponentialfunktionen sehr einfach durch kleine
+Fehler in den Messdaten für die Minima und Maxima der Schwingung verfälscht
+wird. Solche Messfehler entstehen vor Allem bei den kleinen Extrema, da
+dort die unerwünschten Oberwellen der Stromquelle einen großen Einfluss
+haben.
+
+
+\subsection{Aperiodischer Grenzfall eines RCL-Schwingkreises}
+
+Der gemessene Widerstand in dieser Messreihe beträgt $R_\text{eff} =
+\SI{1.9}{\kilo\ohm}$, während der Theoriewert
+$R = \SI{5.7(2)}{\kilo\ohm}$ beträgt.
+Das entspricht einer prozentualen Abweichung von
+
+\begin{equation}
+  \SI{100}{\percent} (1 - \frac{R_\text{eff}}{R}) = \SI{66.7}{\percent}.
+\end{equation}
+Diese große Abweichung lässt sich dadurch erklären, dass die minimale
+Überschwingung, die unmittelbar vor dem aperiodischen Grenzfall vorhanden ist
+am Oszilloskop kaum erkennbar ist, sodass der Widerstand nur sehr grob
+gemessen werden kann.
+Außerdem verringern Kabel und Anschlüsse den gemessenen Widerstand, da ihre
+Innenwiderstände ebenfalls die Schwingung dämpfen und somit den Grenzfall
+beeinflussen.
+
+
+\subsection{Spannung der erzwungenen Schwingung}
+
+In Abbildung \ref{fig:Theo} sind die Messwerte und die Theoriekurve der
+Kondensatorspannung $U_C$ aufgetragen.
+
+\newpage
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plotc2.pdf}
+  \caption{Messwerte und Theoriekurve der erzwungenen Schwingung.}
+  \label{fig:Theo}
+\end{figure}
+
+Auffällig ist, dass die Theoriekurve ein deutlich größeres Maximum als der
+Graph der Messwerte besitzt. Da die Grenzfrequenzen im Vergleich dazu
+sehr nahe aneinander liegen mit einem Verhältniswert von
+
+\begin{equation}
+  \frac{\nu_\text{messung}}{\nu_\text{theorie}} = \frac{26000}{27027}\si{\hertz}
+  = 0.962
+\end{equation}
+und die Frequenzen, die die Breite des Peaks ausmachen, sich jeweils
+stark unterscheiden liegen auch die jeweiligen Endergebnisse für die Güte
+weit auseinander.
+Die prozentuale Abweichung zwischen der aus den Messwerten berechneten Güte
+und dem Theoriewert beträgt
+
+\begin{equation}
+  \SI{100}{\percent} (1 - \frac{q_\text{messung}}{q_\text{theorie}}) =
+  \SI{61.1}{\percent}.
+\end{equation}
+Die großen Unterschiede im Resonanz-Peak der beiden Werte treten vor Allem
+dadurch auf, dass ein sehr kleiner Widerstand $R = \SI{67.2(2)}{\ohm}$
+benutzt wurde. Minimale Widerstände in den Kabeln und Schaltungen
+haben so deutlich größere Auswirkungen.
+Außerdem ist die Spannung der Resonanzfrequenz bei kleineren Widerständen
+deutlich höher als bei größeren, wodurch die Auswirkung der nicht mit
+einberechneten Widerstände umso größer ist.
+Die Bestimmung der Güte über die Spannung eignet sich nur bei hohen
+Widerständen.
+
+\subsection{Phasenverschiebung der erzwungenen Schwingung}
+
+Bei der letzten Messung ist die Abweichung zwischen Mess- und Theoriewert
+mit
+
+\begin{equation}
+  \SI{100}{\percent}(1-\frac{\nu_\text{messung}}{\nu_\text{theorie}}) =
+  \SI{5.8}{\percent}
+\end{equation}
+gering.
+Die Bestimmung der Güte über die Phasenverschiebung eignet sich also sehr gut.
