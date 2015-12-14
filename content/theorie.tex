@@ -2,6 +2,7 @@
 \label{sec:Theorie}
 
 \subsection{Gedämpfte Schwingungen}
+\label{sec:gedschw}
 
 Ein gedämpfter elektrischer Schwingkreis ist beispielsweise ein \textbf{RCL}-Kreis.
 In Abbildung \ref{fig:rcl} ist einer abgebildet.
@@ -45,9 +46,10 @@ Mit den Abkürzungen
 
 \begin{align}
   2 \pi \mu := \g{\frac{R}{2 L}} & \text{und} & 2 \pi \g{\tilde{\nu}} := \g{\sqrt{\frac{1}{L C} - \frac{R^2}{4 L^2}}}
+  \label{eqn:abk}
 \end{align}
 
-ergibt sich die Gleichung \eqref{eqn:gedschw}.
+ergibt sich, bei reellem $\tilde{\nu}$ in Gleichung \eqref{eqn:abk}, die Gleichung \eqref{eqn:gedschw}.
 
 \begin{equation}
   I(t) = A_0 \g{e}^{-2 \g{\pi} \mu t} \cos(2 \g{\pi} \nu t + \eta)
@@ -59,7 +61,44 @@ In Abbildung \ref{fig:gedschw} ist dies auch zu erkennen.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width = \textwidth]{gedschw.pdf}
-  \caption{Eine gedämpfte Schwingung mit der Einhüllenden $\pm e^{-2\g{\pi}\mu t}$.}
+  \includegraphics[height = 5cm]{gedschw.pdf}
+  \caption{Eine gedämpfte Schwingung mit der Einhüllenden $\pm e^{-2\g{\pi}\mu t}$ \cite{anleitung}.}
   \label{fig:gedschw}
 \end{figure}
+
+Die Schwingungsdauer nähert sich dabei nach Gleichung \eqref{eqn:Tschwing}.
+
+\begin{equation}
+  T_{\text{0}} = \frac{2 \pi}{\omega_0} = 2 \g{\pi}\sqrt{\g{LC}}
+  \label{eqn:Tschwing}
+\end{equation}
+
+Die Abklingdauer nach der die Amplitude auf den e-ten Teil abgefallen ist
+berechnet sich nach Gleichung \eqref{eqn:Tex}.
+
+\begin{equation}
+  T_{\text{ex}} = \frac{1}{2\g{\pi}\mu} = \frac{2\g{L}}{\g{R}}
+\end{equation}
+
+\subsection{Aperiodischer Grenzfall}
+
+Nun wird der Fall betrachtet, der auftritt wenn gilt:
+$1/LC = R_{ap}^2/4L^2$. Dann wird nämlich $\nu = 0$ und die Lösung stellt
+sich wie in Gleichung \eqref{eqn:aperio} dar:
+
+\begin{equation}
+  I(t) = A \g{e}^{-\frac{R}{2L}\cdot t} = A \g{e}^{-\frac{t}{\sqrt{LC}}}.
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height = 5cm]{aperio.pdf}
+  \caption{Schwingungsformen bei gedämpftem Schwingkreis mit $x(t) = I(t)$ \cite{weis}.}
+  \label{fig:aperio}
+\end{figure}
+
+In Abbildung \ref{fig:aperio} ist der aperiodische Grenzfall, der
+Schwingfall, der in Kapitel \ref{sec:gedschw} thematisiert wird, und
+außerdem der Kriechfall zu sehen.
+
+\subsection{Erzwungene Schwingungen}
