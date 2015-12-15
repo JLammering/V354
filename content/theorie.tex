@@ -73,11 +73,12 @@ Die Schwingungsdauer nähert sich dabei nach Gleichung \eqref{eqn:Tschwing}.
   \label{eqn:Tschwing}
 \end{equation}
 
-Die Abklingdauer nach der die Amplitude auf den e-ten Teil abgefallen ist
+Die Abklingdauer, nach der die Amplitude auf den e-ten Teil abgefallen ist,
 berechnet sich nach Gleichung \eqref{eqn:Tex}.
 
 \begin{equation}
   T_{\text{ex}} = \frac{1}{2\g{\pi}\mu} = \frac{2\g{L}}{\g{R}}
+  \label{eqn:Tex}
 \end{equation}
 
 \subsection{Aperiodischer Grenzfall}
@@ -88,11 +89,12 @@ sich wie in Gleichung \eqref{eqn:aperio} dar:
 
 \begin{equation}
   I(t) = A \g{e}^{-\frac{R}{2L}\cdot t} = A \g{e}^{-\frac{t}{\sqrt{LC}}}.
+  \label{eqn:aperio}
 \end{equation}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height = 5cm]{aperio.pdf}
+  \includegraphics[height = 8cm]{aperio.pdf}
   \caption{Schwingungsformen bei gedämpftem Schwingkreis mit $x(t) = I(t)$ \cite{weis}.}
   \label{fig:aperio}
 \end{figure}
@@ -102,3 +104,67 @@ Schwingfall, der in Kapitel \ref{sec:gedschw} thematisiert wird, und
 außerdem der Kriechfall zu sehen.
 
 \subsection{Erzwungene Schwingungen}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height = 5cm]{erzwschw.pdf}
+  \caption{Schaltkreis zur Erzeugung einer erzwungenen Schwingung innerhalb
+  eines elektrischen Schwingkreises \cite{anleitung}.}
+  \label{fig:erzwschw}
+\end{figure}
+
+In Abbildung \ref{fig:erzwschw} ist ein neuer Schaltkreis abgebildet. Hier
+wird nun durch einen Sinus-Generator eine Wechselspannung  $\mathfrak{U}(t)$
+an das System angelegt.
+
+Über die Differentialgleichung \eqref{eqn:dglerzw}
+
+\begin{equation}
+  L\frac{\g{d}\mathfrak{I}}{\g{dt}} + R\mathfrak{I} + \frac{\mathfrak{C}}{\g{C}}
+   = U_{\text{0}}\g{e}^{i\omega t}
+  \label{eqn:dglerzw}
+\end{equation}
+ergibt sich für die Kondensatorspannung $U_C$ in Abhängigkeit von der
+Kreisfrequenz $\omega$ die Gleichung \eqref{eqn:ukonden}.
+
+\begin{equation}
+  U_C(\omega) = \frac{U_\text{0}}{\sqrt{(1 - LC\omega^2)^2 + \omega^2
+  R^2C^2}}
+  \label{eqn:ukonden}
+\end{equation}
+
+Dabei ist $\omega = 2 \g{\pi} \nu$. Der Verlauf dieser Kurve stellt sich
+so dar, dass die Kurve für $\omega \to \infty$ gegen 0 geht und für
+$\omega \to 0$ gegen den Wert der Erregeramplitude $U_0$ strebt.
+Zwischen diesen beiden Werten besitzt die Kurve ein Extremum, das
+größer als $U_0$ sein kann. Die Frequenz, bei der das der Fall ist,
+heißt $\omega_{\text{res}}$; berechnet wird sie folgt:
+
+\begin{equation}
+  \omega_{\text{res}} = \sqrt{\frac{1}{LC} - \frac{R^2}{2L^2}}.
+\end{equation}
+
+Wenn das System nur schwach gedämpft ist, $\frac{R^2}{2L^2}$ also viel
+kleiner ist als $\frac{1}{LC}$, nähert sich $\omega_{\text{res}}$ der
+Kreisfrequenz $\omega{\text{0}}$ der ungedämpften Schwingung an.
+
+Dann übertrifft $U_C$ die Erregerspannung $U_0$ um den Faktor $q$ nach
+Gleichung \eqref{eqn:resoueber} mit
+
+\begin{equation}
+  q = \frac{1}{\omega_0RC} = \frac{1}{R}\sqrt{\frac{L}{C}}.
+\end{equation}
+
+\begin{equation}
+  U_{C,max} = q U_{\text{0}}
+  \label{eqn:resoueber}
+\end{equation}
+
+$q$ wird als Resonanzüberhöhung oder Güte bezeichnet.
+Sie kann auch über die Breite zwischen den beiden Frequenzen $\omega_+$
+und $\omega_-$ an denen $U_C$ auf den Bruchteil $1/\sqrt{2}$ des
+Maximalwerts abgesunken ist. Dann folgt für die Güte
+
+\begin{equation}
+  q = \frac{\omega_{\text{0}}}{\omega_+ - \omega_-}.
+\end{equation}
