@@ -27,8 +27,11 @@ build/plotd1.pdf: plotd1.py matplotlibrc header-matplotlib.tex Datencd.txt | bui
 build/plotd2.pdf: plotd2.py matplotlibrc header-matplotlib.tex Datencdh.txt | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plotd2.py
 
+build/plotphase.pdf: plotphase.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python plotphase.py
+
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf:  build/plota.pdf build/plotc1.pdf build/plotc2.pdf build/plotd1.pdf build/plotd2.pdf
+build/main.pdf:  build/plota.pdf build/plotc1.pdf build/plotc2.pdf build/plotd1.pdf build/plotd2.pdf build/plotphase.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
