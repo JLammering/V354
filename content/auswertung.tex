@@ -5,7 +5,14 @@
 \subsection{Schwingfall eines RCL-Schwingkreises}
 
 Für die Fehlerfortpflanzung bei mehreren fehlerbehafteten Größen wurde jeweils
-die Funktion $ufloat$ von $uncertainties$ benutzt.
+die Formel zur Gaußschen Fehlerfortpflanzung
+
+\begin{equation}
+  \sigma = \sqrt{\sum_{i=1}^{N}\Bigl(\frac{f(x_i)}{\partial x_i}
+  \sigma_i\Bigr)}
+\end{equation}
+mit der jeweiligen Funktion $f(x_i)$, den $N$ Messgrößen $x_i$ und den
+zugehörigen Fehlern $\sigma_i$ verwendet.
 
 \subsubsection{Messwerte}
 
@@ -49,23 +56,21 @@ mit einberechnetem Offset abgebildet.
 
 \subsubsection{Rechnung}
 
-Zunächst werden mit der Funktion $curvefit$ aus $scipy.optimize$ zwei
-Ausgleichsfunktionen bestimmt, die durch die Maxima und Minima
-verlaufen. Diese haben wie schon in der Theorie erwähnt jeweils die Form einer
-Exponentialfunktion.
-Die obere Einhüllende, die durch die Maxima verläuft, entspricht mit
+Zunächst wird eine Ausgleichsfunktionen bestimmt, die durch die Maxima und
+Minima verläuft.
+Diese hat mit
 
 \begin{equation}
-  U_1(t) = \SI{109.33}{\V} \symup{e}^{-2\symup{\pi} \cdot
-  \SI{568.79}{\per\second} \cdot t}
+  U(t) = \pm a \cdot \symup{e}^{-2\symup{\pi}\cdot b \cdot t}
 \end{equation}
-etwa dem Betrag der unteren Einhüllenden
+die Form einer Exponentialfunktion, wie bereits in der Theorie erwähnt.
+Die berechneten Koeffizienten der Einhüllenden lauten
 
-\begin{equation}
-  U_2(t) = \SI{-96.52}{\V} \symup{e}^{-2\symup{\pi} \cdot
-  \SI{677.96}{\per\second} \cdot t}.
-\end{equation}
-Dies ist ebenfalls in Abbildung \ref{fig:Schwingfall} erkennbar.
+\begin{align}
+  a & = \SI{104(4)}{\V} \\
+  b & = \SI{630(40)}{\per\second} \\
+\end{align}
+Die Funktion ist in Abbildung \ref{fig:Schwingfall} dargestellt.
 
 \begin{figure}[h]
   \centering
@@ -74,28 +79,23 @@ Dies ist ebenfalls in Abbildung \ref{fig:Schwingfall} erkennbar.
   \label{fig:Schwingfall}
 \end{figure}
 
-Aus den Exponenten der Exponentialfunktionen wird das arithmetische Mittel
-gebildet. Es folgt
-
-\begin{equation}
-  \mu = \SI{623.375}{\per\second}
-\end{equation}
-und daraus über die Formel
+Über die Formel
 
 \begin{equation}
   T_\text{ex} = \frac{2L}{R} = \frac{1}{2\symup{\pi}\mu}
 \end{equation}
-der effektive Dämpfungswiderstand
+folgt nun der effektive Dämpfungswiderstand
 
 \begin{equation}
-  R_\text{eff} = \SI{131.4(7)}{\ohm}
+  R_\text{eff} = \SI{133(9)}{\ohm}
 \end{equation}
 und die Abklingdauer
 
 \begin{equation}
-  T_\text{ex} = \SI{0.0002553}{\second} = \SI{0.2553}{\micro\second} .
+  T_\text{ex} = \SI{0.25(2)}{\milli\second} .
 \end{equation}
-Der benutzte Dämpfungswiderstand beträgt wie schon in der Durchführung erwähnt
+Der benutzte Dämpfungswiderstand beträgt, wie bereits in der Durchführung
+erwähnt,
 
 \begin{equation}
   R = \SI{682(1)}{\ohm} .
@@ -111,7 +111,7 @@ Für den effektiven variablen Widerstand wird dafür der Wert
 \begin{equation}
   R_\text{eff} = \SI{1.9}{\kilo\ohm}
 \end{equation}
-gemessen.
+eingestellt.
 Der Theoriewert für den Dämpfungswiderstand bei gegebener Kapazität $C$ und
 Induktivität $L$ ist
 
@@ -126,7 +126,7 @@ einer erzwungenen Schwingung}
 \subsubsection{Messwerte}
 
 In der dritten Messreihe wird sowohl die Kondensatorspannung $U_C$ als auch die
-Phasenverschiebung $\theta$ der erzwungenen Schwingung im RCL-Schwingkreis in
+Phasenverschiebung $\phi$ der erzwungenen Schwingung im RCL-Schwingkreis in
 Abhängigkeit von der Frequenz $\nu$ gemessen.
 In den Tabellen \ref{tab:Messung3a} und \ref{tab:Messung3b}
 sind die aufgenommenen Messwerte abgebildet.

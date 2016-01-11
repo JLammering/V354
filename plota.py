@@ -12,38 +12,37 @@ y = y * 10**(-5) - 96.9
 plt.plot(x, y, 'k-', label = r'Messwerte')
 
 
-# Plot der Maxima und Ausgleichsfunktion:
+# Plot der Maxima:
 
 m, n = np.genfromtxt('Datena2.txt', unpack = True)
 n = n - 96.9
 
-def f(m, a, b):
-    return a * np.exp(-2*np.pi*b * m)
-
-params, cov = curve_fit(f, m, n)
-
-print(*params)
-
 plt.plot(m, n, 'b.', label = r'Maxima und Minima')
-m = np.linspace(0, 0.0005, 500)
-plt.plot(m, f(m, *params), 'r', label = r'Einhüllene Funktionen')
 
-
-# Plot der Minima und Ausgleichsfunktion:
+# Plot der Minima:
 
 o, p = np.genfromtxt('Datena3.txt', unpack = True)
 p = p - 96.9
 
-def f(o, a, b):
-    return a * np.exp(-2*np.pi*b * o)
-
-params, cov = curve_fit(f, o, p)
-
-print(*params)
-
 plt.plot(o, p, 'b.')
-o = np.linspace(0, 0.0005, 500)
-plt.plot(o, f(o, *params), 'r')
+
+# Ausgleichsfunktion:
+
+k, l = np.genfromtxt('Datena4.txt', unpack = True)
+l = np.abs(l-96.9)
+
+def f(k, a, b):
+    return a * np.exp(-2*np.pi*b * k)
+
+params, cov = curve_fit(f, k, l)
+
+errors = np.sqrt(np.diag(cov))
+print('Parameter der Ausgleichsfkt:', *params)
+print('Fehler der Ausgleichsfkt:', errors)
+
+k = np.linspace(0, 0.0005, 500)
+plt.plot(k, f(k, *params), 'r', label=r'Einhüllende')
+plt.plot(k, -f(k, *params), 'r')
 
 #Grundwerte:
 
@@ -52,7 +51,7 @@ C = 2.066 * 10**(-9)
 
 #Theoriewert:
 
-print(np.sqrt(4*L/C))
+print('Theoriewert:',np.sqrt(4*L/C))
 
 # Rest:
 
