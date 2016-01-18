@@ -4,16 +4,6 @@
 
 \subsection{Schwingfall eines RCL-Schwingkreises}
 
-Für die Fehlerfortpflanzung bei mehreren fehlerbehafteten Größen wurde jeweils
-die Formel zur Gaußschen Fehlerfortpflanzung
-
-\begin{equation}
-  \sigma = \sqrt{\sum_{i=1}^{N}\Bigl(\frac{f(x_i)}{\partial x_i}
-  \sigma_i\Bigr)}
-\end{equation}
-mit der jeweiligen Funktion $f(x_i)$, den $N$ Messgrößen $x_i$ und den
-zugehörigen Fehlern $\sigma_i$ verwendet.
-
 \subsubsection{Messwerte}
 
 In der ersten Messung wird mit Hilfe des Oszilloskops der Schwingfall eines
@@ -82,7 +72,7 @@ Die Funktion ist in Abbildung \ref{fig:Schwingfall} dargestellt.
 Über die Formel
 
 \begin{equation}
-  T_\text{ex} = \frac{2L}{R} = \frac{1}{2\symup{\pi}\mu}
+  T_\text{ex} = \frac{2L}{R} = \frac{1}{2\symup{\pi}b}
 \end{equation}
 folgt nun der effektive Dämpfungswiderstand
 
@@ -126,7 +116,7 @@ einer erzwungenen Schwingung}
 \subsubsection{Messwerte}
 
 In der dritten Messreihe wird sowohl die Kondensatorspannung $U_C$ als auch die
-Phasenverschiebung $\phi$ der erzwungenen Schwingung im RCL-Schwingkreis in
+Phasenverschiebung $\varphi$ der erzwungenen Schwingung im RCL-Schwingkreis in
 Abhängigkeit von der Frequenz $\nu$ gemessen.
 In den Tabellen \ref{tab:Messung3a} und \ref{tab:Messung3b}
 sind die aufgenommenen Messwerte abgebildet.
@@ -216,21 +206,19 @@ die Messwerte der Kondensatorspannung logarithmisch als Graph aufgetragen.
 Aus den Werten für die Resonanzfrequenz
 
 \begin{equation}
-  \nu_\text{res} = \SI{26000}{\hertz}
+  \nu_\text{res} = \SI{26272}{\hertz}
 \end{equation}
 und den Grenzen des Resonanz-Peaks
 
 \begin{align}
-  \nu_- = & \SI{25600}{\V} & \nu_+ = & \SI{27000}{\V}, \\
+  \nu_- = & \SI{25571}{\V} & \nu_+ = & \SI{26992}{\V}, \\
 \end{align}
 die jeweils an der Kondensatorspannung
 
 \begin{equation}
-  U_{+-} = \frac{\SI{186}{\V}}{\sqrt{2}} = \SI{131.5}{\V}
+  U_{+-} = \frac{\SI{185.4}{\V}}{\sqrt{2}} = \SI{131.1}{\V}
 \end{equation}
 liegen, kann nun die Güte $q$ des Schwingkreises bestimmt werden.
-
-\newpage
 
 \begin{figure}[h]
   \centering
@@ -247,7 +235,7 @@ Aus der Formel
 folgt für die Güte
 
 \begin{equation}
-  q = 1.857 .
+  q = 18.49.
 \end{equation}
 Der Theoriewert der Güte hat mit der Grenzfrequenz
 
@@ -257,12 +245,12 @@ Der Theoriewert der Güte hat mit der Grenzfrequenz
 und den Grenzen des Resonanz-Peaks
 
 \begin{align}
-  \nu_- = & \SI{24049}{\V} & \nu_+ = & \SI{29798}{\V} \\
+  \nu_- = & \SI{26706}{\V} & \nu_+ = & \SI{27344}{\V} \\
 \end{align}
 den Wert
 
 \begin{equation}
-  q = 4.776 .
+  q = 42.40 .
 \end{equation}
 
 \subsubsection{Berechnung der Phasenverschiebung}
@@ -273,44 +261,50 @@ Mit Hilfe der Formel
   \varphi = t_D \cdot 2\symup{\pi}f
 \end{equation}
 wird für jeden Differenzwert $t_D$ die Phasenverschiebung $\varphi$ bestimmt.
-Die Werte sind in einem Polarplot in Abbildung \ref{fig:Polar} abgebildet.
-
-\begin{figure}
-  \centering
-  \includegraphics{plotd1.pdf}
-  \caption{Messwerte der Phasenverschiebung, Frequenz in $\si{\kilo\hertz}$.}
-  \label{fig:Polar}
-\end{figure}
-
-Der Bereich um $\varphi = \symup{\pi}$ ist zusätzlich in einem karthesischen
-Koordinatensystem in Abbildung \ref{fig:Karth} dargestellt.
-
-\newpage
+Die Phasenverschiebung für $\varphi > \SI{0}{\degree}$ ist in Abbildung
+\ref{fig:Phasegros} gegen die Frequenz $\nu$ aufgetragen.
 
 \begin{figure}
   \centering
   \includegraphics{plotd2.pdf}
   \caption{Phasenverschiebung zwischen $0$ und $\symup{\pi}$.}
-  \label{fig:Karth}
+  \label{fig:Phasegros}
 \end{figure}
 
-Aus diesem Graphen erhält man die Werte
+Der Bereich um $\varphi = \SI{90}{\degree}$ wird durch eine Ausgleichsgerade
+angenähert. Diese ist in Abbildung \ref{fig:Phaseklein} abgebildet.
+
+\begin{figure}
+  \centering
+  \includegraphics{plotd3.pdf}
+  \caption{Phasenverschiebung um $\varphi = \SI{90}{\degree}$ und lineare
+  Regression.}
+  \label{fig:Phaseklein}
+\end{figure}
+
+Aus diesem Graphen erhält man die Resonanzfrequenz
+
+\begin{equation}
+  \nu_r =
+\end{equation}
+und die Werte
 
 \begin{align}
-  \nu_1 = & \SI{26000}{\hertz} & \nu_2 = & \SI{26600}{\hertz} \\
+  \nu_1 = & \SI{}{\hertz} & \nu_2 = & \SI{}{\hertz} \\
 \end{align}
 an den Stellen
 
 \begin{align}
-  \varphi_1 = & \frac{\symup{\pi}}{2} & \varphi_2 = & \frac{\symup{3\pi}}{4}. \\
+  \varphi_1 = & \SI{45}{\degree} & \varphi_2 = & \SI{135}{\degree}. \\
 \end{align}
 Für die Differenz folgt
 
 \begin{equation}
-  \nu_2 - \nu_1 = \SI{600}{\hertz}.
+  \nu_2 - \nu_1 = \SI{}{\hertz}.
 \end{equation}
-Der Theoriewert beträgt
 
-\begin{equation}
-  \frac{R}{2\symup{\pi}L} = \SI{637(4)}{\hertz}.
-\end{equation}
+
+Resonanzfrequenz: 26308.9540714
+links: 25930.2069181
+rechts: 26687.7012247
+Güte: 34.7315535484

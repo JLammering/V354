@@ -30,21 +30,21 @@ plt.plot(v/(2*np.pi), 10/np.sqrt(((1-L*C*v**2)**2) +
 l = (np.sqrt(1/(L*C) - R**2/(2*L**2))/(2*np.pi))
 plt.plot((l, l), (1, 1000), 'r')
 
-print(l)
-
 #Theorie Peak-Grenzen
 
 h = 10/(np.sqrt(((1-L*C*(l*2*np.pi)**2)**2) + ((l*2*np.pi)**2 * R**2 * C**2)))
 
 k = h/np.sqrt(2)
 
-i = 1/(2*np.pi)*np.sqrt((2*L*C-R**2*C**2)/(2*L**2*C**2)  +  np.sqrt( ((-2*L*C+R**2*C**2)/(2*L**2*C**2))**2 +
-400 * (np.pi)**2/(k**2*L**2*C**2) - 1/(L**2*C**2) ))
+i = np.sqrt((1/(L*C)-R**2/(2*L**2))-np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
+(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
 
-j = 1/(2*np.pi)*np.sqrt((2*L*C-R**2*C**2)/(2*L**2*C**2)  -  np.sqrt( ((-2*L*C+R**2*C**2)/(2*L**2*C**2))**2 +
-400 * (np.pi)**2/(k**2*L**2*C**2) - 1/(L**2*C**2) ) )
+j = np.sqrt((1/(L*C)-R**2/(2*L**2))+np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
+(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
 
-print(h, i, j)
+print('Theoriespannungen:', h, k)
+print('Theoriefrequenzen:', l, j, i)
+print('Theoriegüte:', l/(j-i))
 
 #Rest:
 
