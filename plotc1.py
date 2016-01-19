@@ -25,7 +25,7 @@ params, cov = curve_fit(g, f, U, p0=(1e2, 10e-3,1e-9))
 print(params)
 
 f = np.linspace(0, 41000, 10000)
-plt.plot(f, g(f, *params), 'r-')
+plt.plot(f, g(f, *params), 'r-', label = r'Ausgleichsfunktion')
 
 #Breitenfrequenzen:
 x = np.linspace(0, 46000, 10)
@@ -49,6 +49,7 @@ print('ResonanzpeakWert:' ,peak)
 print('Resonanzpeakfrequenz:' ,v)
 print('linke Frequenz:' ,links)
 print('rechte Frequenz:' ,rechts)
+print('Güte:', v/(rechts-links))
 
 
 #Rest:
