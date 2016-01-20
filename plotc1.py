@@ -23,6 +23,8 @@ def g(f, r, l, c):
 params, cov = curve_fit(g, f, U, p0=(1e2, 10e-3,1e-9))
 
 print(params)
+errors = np.sqrt(np.diag(cov))
+print(errors)
 
 f = np.linspace(0, 41000, 10000)
 plt.plot(f, g(f, *params), 'r-', label = r'Ausgleichsfunktion')
@@ -45,11 +47,13 @@ links = np.sqrt((1/(b*c)-a**2/(2*b**2))-np.sqrt(((a**2/(b**2)-2/(b*c))**2)/4 +
 rechts = np.sqrt((1/(b*c)-a**2/(2*b**2))+np.sqrt(((a**2/(b**2)-2/(b*c))**2)/4 +
 (100/(m**2)-1)/(b**2*c**2)))*(1/(2*np.pi))
 
-print('ResonanzpeakWert:' ,peak)
-print('Resonanzpeakfrequenz:' ,v)
-print('linke Frequenz:' ,links)
-print('rechte Frequenz:' ,rechts)
-print('Güte:', v/(rechts-links))
+print('Güte:', 1/(a*c*v*2*np.pi))
+
+#print('ResonanzpeakWert:' ,peak)
+#print('Resonanzpeakfrequenz:' ,v)
+#print('linke Frequenz:' ,links)
+#print('rechte Frequenz:' ,rechts)
+#print('Güte:', v/(rechts-links))
 
 
 #Rest:

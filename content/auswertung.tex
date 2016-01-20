@@ -58,7 +58,7 @@ Die berechneten Koeffizienten der Einhüllenden lauten
 
 \begin{align}
   a & = \SI{104(4)}{\V} \\
-  b & = \SI{630(40)}{\per\second} \\
+  b & = \SI{6.3(4)e02}{\per\second}.
 \end{align}
 Die Funktion ist in Abbildung \ref{fig:Schwingfall} dargestellt.
 
@@ -202,56 +202,81 @@ dargestellt.
 \subsubsection{Berechnung der Güte}
 
 In Abbildung \ref{fig:plotc1} sind
-die Messwerte der Kondensatorspannung logarithmisch als Graph aufgetragen.
-Aus den Werten für die Resonanzfrequenz
+die Messwerte der Kondensatorspannung und der zugehörige Fit logarithmisch
+aufgetragen. Aus dem Wert für die Resonanzfrequenz
 
 \begin{equation}
-  \nu_\text{res} = \SI{26272}{\hertz}
+  \nu_\text{res,a} = \SI{26271.8}{\hertz}
 \end{equation}
-und den Grenzen des Resonanz-Peaks
+und dem Kondensator- und Widerstandswert der Regression
 
 \begin{align}
-  \nu_- = & \SI{25571}{\V} & \nu_+ = & \SI{26992}{\V}, \\
+  C_\text{fit} & = \SI{1.714e-09}{\farad} & R_\text{fit} & = \SI{190.3}{\ohm}
 \end{align}
-die jeweils an der Kondensatorspannung
+folgt über die Gleichung
 
 \begin{equation}
-  U_{+-} = \frac{\SI{185.4}{\V}}{\sqrt{2}} = \SI{131.1}{\V}
+  q_\text{a} = \frac{1}{\omega_\text{res,a}C_\text{fit}R_\text{fit}}
 \end{equation}
-liegen, kann nun die Güte $q$ des Schwingkreises bestimmt werden.
+die Güte
+
+\begin{equation}
+  q_\text{a} = 18.57.
+\end{equation}
+
+\newpage
 
 \begin{figure}[h]
   \centering
   \includegraphics{plotc1.pdf}
-  \caption{Resonanzkurve der Spannung.}
+  \caption{Messwerte und Fit der Resonanzkurve.}
   \label{fig:plotc1}
 \end{figure}
 
+In Abbildung \ref{fig:plotc3} sind die Messwerte des Resonanzpeaks dargestellt
+und durch zwei Geraden angenähert. Aus der Resonanzfrequenz
+
+\begin{equation}
+  \nu_\text{res,b} = \SI{263(6)e02}{\hertz}
+\end{equation}
+und der Resonanzpeakbreite
+
+\begin{equation}
+  \nu_+ - \nu_- = \SI{13(4)e02}{\hertz}
+\end{equation}
+die jeweils an der Kondensatorspannung
+
+\begin{equation}
+  U_{+-} = \frac{\SI{1.9(5)e02}{\V}}{\sqrt{2}} = \SI{1.4(4)e02}{\V}
+\end{equation}
+liegen, kann nun die Güte $q$ des Schwingkreises bestimmt werden.
 Aus der Formel
 
 \begin{equation}
-  q = \frac{\nu_\text{res}}{\nu_+ - \nu_-}
+  q_\text{b} = \frac{\nu_\text{res}}{\nu_+ - \nu_-}
 \end{equation}
 folgt für die Güte
 
 \begin{equation}
-  q = 18.49.
+  q_\text{b} = \num{19(5)}.
 \end{equation}
 Der Theoriewert der Güte hat mit der Grenzfrequenz
 
 \begin{equation}
-  \nu_\text{res} = \SI{27027}{\hertz}
+  \nu_\text{res,t} = \SI{27.03(8)e02}{\hertz}
 \end{equation}
-und den Grenzen des Resonanz-Peaks
-
-\begin{align}
-  \nu_- = & \SI{26706}{\V} & \nu_+ = & \SI{27344}{\V} \\
-\end{align}
-den Wert
+und den benutzten Kondensator- und Widerstandswerten den Wert
 
 \begin{equation}
-  q_1 = 42.40 .
+  q_\text{t} = \num{42.4(2)} .
 \end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plotc3.pdf}
+  \caption{Messwerte am Resonanzpeak und lineare Regression.}
+  \label{fig:plotc3}
+\end{figure}
 
 \subsubsection{Berechnung der Phasenverschiebung}
 
@@ -264,28 +289,21 @@ wird für jeden Differenzwert $t_D$ die Phasenverschiebung $\varphi$ bestimmt.
 Die Phasenverschiebung für $\varphi > \SI{0}{\degree}$ ist in Abbildung
 \ref{fig:Phasegros} gegen die Frequenz $\nu$ aufgetragen.
 
+\newpage
+
 \begin{figure}[h]
   \centering
-  \includegraphics{plotd3.pdf}
+  \includegraphics{plotd2.pdf}
   \caption{Phasenverschiebung zwischen $0$ und $\symup{\pi}$.}
   \label{fig:Phasegros}
 \end{figure}
 
 Der Bereich um $\varphi = \SI{90}{\degree}$ wird durch eine Ausgleichsgerade
 angenähert. Diese ist in Abbildung \ref{fig:Phaseklein} abgebildet.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics{plotd3.pdf}
-  \caption{Phasenverschiebung um $\varphi = \SI{90}{\degree}$ und lineare
-  Regression.}
-  \label{fig:Phaseklein}
-\end{figure}
-
 Aus diesem Graphen erhält man die Resonanzfrequenz
 
 \begin{equation}
-  \nu_r = \SI{263(15)e2}{\hertz}
+  \nu_\text{res,c} = \SI{263(15)e2}{\hertz}
 \end{equation}
 und die Werte
 
@@ -300,5 +318,13 @@ an den Stellen
 Für die Güte folgt
 
 \begin{equation}
-  q_2 = \num{34.73(0)}.
+  q_\text{c} = \num{35(3)}.
 \end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{plotd3.pdf}
+  \caption{Phasenverschiebung um $\varphi = \SI{90}{\degree}$ und lineare
+  Regression.}
+  \label{fig:Phaseklein}
+\end{figure}

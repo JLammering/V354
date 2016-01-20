@@ -26,30 +26,31 @@ plt.plot(v/(2*np.pi), 10/np.sqrt(((1-L*C*v**2)**2) +
 
 #Grundwerte:
 
-#R = ufloat(67.2, 0.2)
-#L = ufloat(16.78 * 10**(-3), 0.09 * 10**(-3))
-#C = ufloat(2.066 * 10**(-9), 0.006 * 10**(-9))
+R = ufloat(67.2, 0.2)
+L = ufloat(16.78 * 10**(-3), 0.09 * 10**(-3))
+C = ufloat(2.066 * 10**(-9), 0.006 * 10**(-9))
 
 #Theorie-Frequenz-Wert:
 
-l = (np.sqrt(1/(L*C) - R**2/(2*L**2))/(2*np.pi))
-plt.plot((l, l), (1, 1000), 'r')
+l = ((1/(L*C) - R**2/(2*L**2)))**(0.5)/(2*np.pi)
+plt.plot((l.n, l.n), (1, 1000), 'r')
 
 #Theorie Peak-Grenzen
 
-h = 10/(np.sqrt(((1-L*C*(l*2*np.pi)**2)**2) + ((l*2*np.pi)**2 * R**2 * C**2)))
+#h = 10/(np.sqrt(((1-L*C*(l*2*np.pi)**2)**2) + ((l*2*np.pi)**2 * R**2 * C**2)))
 
-k = h/np.sqrt(2)
+#k = h/np.sqrt(2)
 
-i = np.sqrt((1/(L*C)-R**2/(2*L**2))-np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
-(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
+#i = np.sqrt((1/(L*C)-R**2/(2*L**2))-np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
+#(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
 
-j = np.sqrt((1/(L*C)-R**2/(2*L**2))+np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
-(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
+#j = np.sqrt((1/(L*C)-R**2/(2*L**2))+np.sqrt(((R**2/(L**2)-2/(L*C))**2)/4 +
+#(100/(k**2)-1)/(L**2*C**2)))*(1/(2*np.pi))
 
-print('Theoriespannungen:', h, k)
-print('Theoriefrequenzen:', l, j, i)
-print('Theoriegüte:', l/(j-i))
+#print('Theoriespannungen:', h, k)
+print('Theoriefrequenz:', l)
+#print('Theoriegüte:', l/(j-i))
+print('Theoriegüte:', 1/(l*2*np.pi*R*C))
 
 #Rest:
 

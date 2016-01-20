@@ -21,9 +21,13 @@ print('Resonanzfrequenz:', res)
 print('links:', left)
 print('rechts:', right)
 
-Güte = res/(right-left)
+rl = right-left
 
-print('Güte:', Güte)
+print('Breite:', rl)
+
+Gute = res/rl
+
+print('Güte:', Gute)
 
 plt.xlim(25700,26800)
 plt.legend(loc = 'best')

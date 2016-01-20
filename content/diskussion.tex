@@ -60,23 +60,26 @@ Kondensatorspannung $U_C$ aufgetragen.
 
 Auffällig ist, dass die Theoriekurve ein deutlich größeres Maximum als der
 Graph der Messwerte besitzt. Da die Grenzfrequenzen im Vergleich dazu
-sehr nahe aneinander liegen mit einem Verhältniswert von
+sehr nahe aneinander liegen mit Verhältniswerten von
 
-\begin{equation}
-  \frac{\nu_\text{messung}}{\nu_\text{theorie}} = \frac{26000}{27027}
-  = 0.962
-\end{equation}
-und die Frequenzen, die die Breite des Peaks ausmachen, sich jeweils
-stark unterscheiden liegen auch die jeweiligen Endergebnisse für die Güte
-weit auseinander.
-Die prozentuale Abweichung zwischen der aus den Messwerten berechneten Güte
-und dem Theoriewert beträgt
+\begin{align}
+  \frac{\nu_\text{res,a}}{\nu_\text{res,t}} & = 0.972 &
+  \frac{\nu_\text{res,b}}{\nu_\text{res,t}} & = 0.973
+\end{align}
+und die Frequenzen, die die Breite des Peaks ausmachen, sowie die berechneten
+Bauteilwerte sich jeweils stark von den Theoriewerten unterscheiden,
+liegen auch die jeweiligen Endergebnisse für die Güte weit auseinander.
+Die Fehler der genäherterten Bauteilwerte in dem Fit werden nicht in die
+Rechnungen einbezogen, da sie zum Teil $10^4$-mal so groß wie die
+Werte sind.
+Die prozentualen Abweichungen zwischen den aus den Messwerten berechneten Güten
+und dem Theoriewert betragen
 
-\begin{equation}
-  1 - \frac{q_1}{q_\text{theorie}} =
-  \SI{56.4}{\percent}.
-\end{equation}
-Die großen Unterschiede im Resonanz-Peak der beiden Werte treten vor allem
+\begin{align}
+  1 - \frac{q_a}{q_\text{t}} & = \SI{56.2}{\percent} &
+  1 - \frac{q_b}{q_\text{t}} & = \SI{55.2}{\percent}.
+\end{align}
+Die großen Unterschiede in den Resonanz-Peaks der beiden Werte treten vor allem
 dadurch auf, dass ein sehr kleiner Widerstand $R = \SI{67.2(2)}{\ohm}$
 benutzt wurde. Minimale Widerstände in den Kabeln und Schaltungen
 haben so deutlich größere Auswirkungen.
@@ -92,8 +95,8 @@ Bei der letzten Messung ist die Abweichung zwischen Mess- und Theoriewert
 mit
 
 \begin{equation}
-  1-\frac{q_2}{q_\text{theorie}} =
-  \SI{18.1}{\percent}
+  1-\frac{q_\text{c}}{q_\text{t}} =
+  \SI{17.5}{\percent}
 \end{equation}
 gering.
 Die Bestimmung der Güte über die Phasenverschiebung eignet sich also sehr gut.
